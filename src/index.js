@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import FormExample from "./chapters/FunctionVsClass/FunctionVsClass";
-import { Example } from "./chapters/LazyUseState/LazyUseState";
+import { Calculator } from "./chapters/StorageInUseState/StorageInUseState";
 
-ReactDOM.render(<Example />, document.getElementById("root"));
+ReactDOM.render(<Calculator />, document.getElementById("root"));
