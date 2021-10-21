@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { FormExample } from "./chapters/FunctionVsClass/FunctionVsClass";
-import { Clicker } from "./chapters/UseStateComponent/UseStateComponent";
+import FormExample from "./chapters/FunctionVsClass/FunctionVsClass";
 
-ReactDOM.render(<FormExample/>, document.getElementById("root"));
+ReactDOM.render(<FormExample />, document.getElementById("root"));

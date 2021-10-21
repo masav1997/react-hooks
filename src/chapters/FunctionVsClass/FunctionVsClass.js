@@ -1,9 +1,23 @@
 import { useState } from "react";
 
-function FormField(props) {
-  const {name, label, value, onChange, type = 'text'} = props;
+function useMergedState(initialState) {
+  const [state, setState] = useState(initialState);
+
+  const mergeState = (changes) => {
+    setState((prevState) => {
+      return {
+        ...prevState,
+        ...changes,
+      };
+    });
+  };
+
+  return [state, mergeState];
+}
+
+function FormField({ name, label, value, onChange, type = "text" }) {
   return (
-    <>
+    <div>
       <label htmlFor={name}>{label}</label>
       <input
         name={name}
@@ -11,73 +25,48 @@ function FormField(props) {
         value={value}
         onChange={(event) => onChange(event.target.value)}
       />
-    </>
+    </div>
   );
 }
 
-const DEFAULT_AGE = 21;
-
 const initialState = {
-  firstName: '',
-  lastName: '',
-  age: DEFAULT_AGE
-}
+  firstName: "",
+  lastName: "",
+  age: 21,
+};
 
-export function FormExample() {
-  const [state, setState] = useState(initialState);
+export default function FormExample() {
+  const [data, setData] = useMergedState(initialState);
 
-  const clear = () => {
-    setState(initialState);
-  };
+  const clear = () => setData(initialState);
 
   return (
     <>
       <form>
         <FormField
           name="firstName"
-          label="First Name:"
-          value={state.firstName}
-          onChange={(newValue) => setState(prevState => {
-            return {
-              ...prevState,
-              firstName: newValue
-            };
-          })}
-
+          label="First name"
+          value={data.firstName}
+          onChange={(firstName) => setData({ firstName })}
         />
         <FormField
           name="lastName"
-          label="Last Name:"
-          value={state.lastName}
-          onChange={(newValue) => setState(prevState => {
-            return {
-              ...prevState,
-              lastName: newValue
-            };
-          })}
-
+          label="Last name"
+          value={data.lastName}
+          onChange={(lastName) => setData({ lastName })}
         />
         <FormField
           name="age"
-          label="Age:"
-          value={state.age}
-          onChange={(newValue) => setState(prevState => {
-            return {
-              ...prevState,
-              age: newValue ? parseInt(newValue) : 0
-            };
-          })}
+          label="Age"
+          value={data.age}
+          onChange={(age) => setData({ age: age ? parseInt(age) : "" })}
           type="number"
         />
       </form>
       <div>
         <button onClick={clear}>CLEAR</button>
       </div>
-      <div>
-        firstName: {state.firstName}, <br/>
-        lastName: {state.lastName}, <br/>
-        age: {state.age}
-      </div>
+      <div>{JSON.stringify(data)}</div>
     </>
   );
 }
