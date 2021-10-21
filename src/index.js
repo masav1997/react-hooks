@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Calculator } from "./chapters/StorageInUseState/StorageInUseState";
+import { Counter } from "./chapters/useEffect/useEffect";
 
-ReactDOM.render(<Calculator />, document.getElementById("root"));
+ReactDOM.render(<Counter />, document.getElementById("root"));
