@@ -1,5 +1,5 @@
-import { useEffect, useRef, useCallback } from "react";
-import { useCounter } from "../CustomHooks/CustomHooks";
+import { useEffect, useCallback, useRef } from 'react';
+import { useCounter } from '../CustomHooks/CustomHooks';
 
 function useUpdateEffect(callback) {
   const firstRender = useRef(true);
@@ -17,7 +17,7 @@ export function Example() {
   const [value, increment] = useCounter();
 
   useEffect(() => {
-    console.log("mounted");
+    console.log('mounted');
   }, []);
 
   console.log(`render, value: ${value}`);
@@ -28,5 +28,5 @@ export function Example() {
 
   useUpdateEffect(callback);
 
-  return <button onClick={increment}>RENDERED</button>;
+  return <button onClick={increment}>RERENDER</button>;
 }

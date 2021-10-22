@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function useMergedState(initialState) {
   const [state, setState] = useState(initialState);
@@ -15,7 +15,7 @@ function useMergedState(initialState) {
   return [state, mergeState];
 }
 
-function FormField({ name, label, value, onChange, type = "text" }) {
+function FormField({ name, label, value, onChange, type = 'text' }) {
   return (
     <div>
       <label htmlFor={name}>{label}</label>
@@ -30,12 +30,12 @@ function FormField({ name, label, value, onChange, type = "text" }) {
 }
 
 const initialState = {
-  firstName: "",
-  lastName: "",
+  firstName: '',
+  lastName: '',
   age: 21,
 };
 
-export default function FormExample() {
+export function FormExample() {
   const [data, setData] = useMergedState(initialState);
 
   const clear = () => setData(initialState);
@@ -59,7 +59,7 @@ export default function FormExample() {
           name="age"
           label="Age"
           value={data.age}
-          onChange={(age) => setData({ age: age ? parseInt(age) : "" })}
+          onChange={(age) => setData({ age: age ? parseInt(age) : '' })}
           type="number"
         />
       </form>
