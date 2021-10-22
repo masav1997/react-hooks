@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Counter } from "./chapters/useEffect/useEffect";
+import { Example } from "./chapters/useEffectVsUseLayoutEffect/useEffectVsUseLayoutEffect";
 
-ReactDOM.render(<Counter />, document.getElementById("root"));
+ReactDOM.render(<Example />, document.getElementById("root"));
