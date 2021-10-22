@@ -6,9 +6,10 @@ import { FormExample as Chapter2 } from "./chapters/FunctionVsClass/FunctionVsCl
 import { Example as Chapter3 } from "./chapters/CustomHooks/CustomHooks";
 import { Example as Chapter4 } from "./chapters/LazyUseState/LazyUseState";
 import { Calculator as Chapter5 } from "./chapters/StorageInUseState/StorageInUseState";
-import { Counter as Chapter6 } from "./chapters/useEffect/useEffect";
-import { Example as Chapter7 } from "./chapters/useEffectVsUseLayoutEffect/useEffectVsUseLayoutEffect";
-import { Example as Chapter8 } from "./chapters/useRef/useRef";
+import { Counter as Chapter6 } from "./chapters/UseEffect/UseEffect";
+import { Example as Chapter7 } from "./chapters/UseEffectVsUseLayoutEffect/UseEffectVsUseLayoutEffect";
+import { Example as Chapter8 } from "./chapters/UseRef/UseRef";
+import { Chapter9 } from './chapters/UseImperativeHandle/PinInput';
 
 const content = {
   ch_1: { name: 'Chapter 1', component: Chapter1 },
@@ -19,6 +20,7 @@ const content = {
   ch_6: { name: 'Chapter 6', component: Chapter6 },
   ch_7: { name: 'Chapter 7', component: Chapter7 },
   ch_8: { name: 'Chapter 8', component: Chapter8 },
+  ch_9: { name: 'Chapter 9', component: Chapter9 },
 };
 
 ReactDOM.render(
