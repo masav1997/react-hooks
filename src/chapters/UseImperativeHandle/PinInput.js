@@ -11,11 +11,17 @@ export function Chapter9() {
     ref.current?.focus();
   };
 
+  const clear = () => {
+    setDigits(initialDigits);
+  };
+
+
   return (
     <div>
       <PinInput ref={ref} digits={digits} onChange={setDigits} />
       <p>
         <button onClick={focus}>FOCUS</button>
+        <button onClick={clear}>CLEAR</button>
       </p>
     </div>
   );
