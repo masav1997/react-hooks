@@ -10,6 +10,7 @@ import { Counter as Chapter6 } from "./chapters/UseEffect/UseEffect";
 import { Example as Chapter7 } from "./chapters/UseEffectVsUseLayoutEffect/UseEffectVsUseLayoutEffect";
 import { Example as Chapter8 } from "./chapters/UseRef/UseRef";
 import { Chapter9 } from './chapters/UseImperativeHandle/PinInput';
+import { Chapter10 } from './chapters/HigherOrderComponent/HigherOrderComponent';
 
 const content = {
   ch_1: { name: 'Chapter 1', component: Chapter1 },
@@ -21,6 +22,7 @@ const content = {
   ch_7: { name: 'Chapter 7', component: Chapter7 },
   ch_8: { name: 'Chapter 8', component: Chapter8 },
   ch_9: { name: 'Chapter 9', component: Chapter9 },
+  ch_10: { name: 'Chapter 10', component: Chapter10 }
 };
 
 ReactDOM.render(
